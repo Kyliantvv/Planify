@@ -1,0 +1,103 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="HelloAvalonia.LoginWindow"
+        Width="420" Height="480"
+        Title="Connexion à Planify"
+        WindowStartupLocation="CenterScreen"
+        Background="#F2EFE7">
+
+  <!-- 🎨 Style global pour tous les TextBox -->
+  <Window.Styles>
+    <Style Selector="TextBox">
+      <Setter Property="Background" Value="White"/>
+      <Setter Property="Foreground" Value="#006A71"/>
+      <Setter Property="CaretBrush" Value="#006A71"/>
+      <Setter Property="BorderBrush" Value="#48A6A7"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="CornerRadius" Value="6"/>
+      <Setter Property="Padding" Value="10"/>
+    </Style>
+
+    <Style Selector="TextBox:focus">
+      <Setter Property="Background" Value="White"/>
+      <Setter Property="Foreground" Value="#006A71"/>
+      <Setter Property="CaretBrush" Value="#006A71"/>
+      <Setter Property="BorderBrush" Value="#006A71"/>
+    </Style>
+  </Window.Styles>
+
+  <Border Background="#9ACBD0"
+          Padding="30"
+          CornerRadius="12"
+          BorderBrush="#48A6A7"
+          BorderThickness="2"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Margin="20">
+
+    <StackPanel Spacing="20" HorizontalAlignment="Center">
+
+      <!-- Logo -->
+      <TextBlock Text="🔐"
+                 FontSize="42"
+                 HorizontalAlignment="Center" />
+
+      <TextBlock Text="Connexion à Planify"
+                 FontSize="24"
+                 FontWeight="Bold"
+                 Foreground="White"
+                 HorizontalAlignment="Center" />
+
+      <!-- Champ utilisateur -->
+      <StackPanel>
+        <TextBlock Text="Nom d'utilisateur"
+                   FontSize="14"
+                   FontWeight="Bold"
+                   Foreground="#F2EFE7"
+                   Margin="0,0,0,5" />
+        <TextBox x:Name="UsernameBox"
+                 Width="260"
+                 Height="38"
+                 FontSize="14" />
+      </StackPanel>
+
+      <!-- Champ mot de passe -->
+      <StackPanel>
+        <TextBlock Text="Mot de passe"
+                   FontSize="14"
+                   FontWeight="Bold"
+                   Foreground="#F2EFE7"
+                   Margin="0,10,0,5" />
+        <TextBox x:Name="PasswordBox"
+                 Width="260"
+                 Height="38"
+                 FontSize="14"
+                 PasswordChar="*" />
+      </StackPanel>
+
+      <!-- Bouton Se connecter -->
+      <Button Content="🔓 Se connecter"
+              Width="200"
+              Height="42"
+              FontWeight="Bold"
+              Background="#006A71"
+              Foreground="White"
+              CornerRadius="6"
+              Click="OnLoginClick"
+              HorizontalAlignment="Center"
+              HorizontalContentAlignment="Center"
+              VerticalContentAlignment="Center"
+              Margin="0,20,0,0" />
+
+      <!-- Lien inscription -->
+      <TextBlock Text="Pas encore de compte ? Cliquez ici pour vous inscrire"
+                 FontSize="12"
+                 Foreground="#006A71"
+                 HorizontalAlignment="Center"
+                 Cursor="Hand"
+                 Margin="0,10,0,0"
+                 PointerPressed="OnGoToRegister" />
+
+    </StackPanel>
+  </Border>
+</Window>

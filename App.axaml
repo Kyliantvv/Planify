@@ -1,0 +1,30 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="HelloAvalonia.App"
+             RequestedThemeVariant="Light">
+
+    <Application.Styles>
+        <FluentTheme />
+
+        <Style>
+            <Style.Resources>
+
+                <!-- ✅ Couleurs brutes (Color) attendues par FluentTheme -->
+                <Color x:Key="SystemAccentColor">#006A71</Color>
+                <Color x:Key="SystemAccentColorLight">#48A6A7</Color>
+                <Color x:Key="SystemAccentColorDark">#004D52</Color>
+                <Color x:Key="SystemBaseHighColor">#000000</Color>
+                <Color x:Key="SystemBaseLowColor">#F2EFE7</Color>
+
+                <!-- ✅ Brushes personnalisées pour ton app -->
+                <SolidColorBrush x:Key="BackgroundBrush" Color="#F2EFE7" />
+                <SolidColorBrush x:Key="AccentBrush" Color="#006A71" />
+                <SolidColorBrush x:Key="AccentLightBrush" Color="#48A6A7" />
+                <SolidColorBrush x:Key="CardBrush" Color="#9ACBD0" />
+                <SolidColorBrush x:Key="TextBrush" Color="#000000" />
+                <SolidColorBrush x:Key="TextSecondaryBrush" Color="#333333" />
+
+            </Style.Resources>
+        </Style>
+    </Application.Styles>
+</Application>

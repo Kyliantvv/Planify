@@ -1,0 +1,106 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="HelloAvalonia.MainWindow"
+        Width="750" Height="800"
+        Title="Planify"
+        Background="#F2EFE7"
+        WindowStartupLocation="CenterScreen">
+
+  <!-- 🎨 Style global pour TextBox -->
+  <Window.Styles>
+    <Style Selector="TextBox">
+      <Setter Property="Background" Value="White"/>
+      <Setter Property="Foreground" Value="Black"/>
+      <Setter Property="CaretBrush" Value="Black"/>
+      <Setter Property="BorderBrush" Value="#48A6A7"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="CornerRadius" Value="6"/>
+      <Setter Property="Padding" Value="10"/>
+    </Style>
+    <Style Selector="TextBox:focus">
+      <Setter Property="Background" Value="White"/>
+      <Setter Property="Foreground" Value="Black"/>
+      <Setter Property="CaretBrush" Value="Black"/>
+      <Setter Property="BorderBrush" Value="#006A71"/>
+    </Style>
+  </Window.Styles>
+
+  <Border Background="#9ACBD0" Padding="30" CornerRadius="16" Margin="20" BorderBrush="#48A6A7" BorderThickness="2">
+    <ScrollViewer>
+      <StackPanel Spacing="24">
+
+        <!-- Titre -->
+        <TextBlock Text="📅 Gestion des Rendez-vous"
+                   FontSize="28"
+                   FontWeight="Bold"
+                   Foreground="White"
+                   HorizontalAlignment="Center" />
+
+        <!-- Formulaire RDV -->
+        <Border Background="#F2EFE7" CornerRadius="12" Padding="20" BorderBrush="#CCC" BorderThickness="1">
+          <StackPanel Spacing="12">
+
+            <TextBlock Text="Nom du rendez-vous" FontWeight="Bold" Foreground="#333" />
+            <TextBox x:Name="NomTextBox" Width="500" Height="35" />
+
+            <TextBlock Text="Date" FontWeight="Bold" Foreground="#333" />
+            <DatePicker x:Name="DatePicker" Width="250" Height="35" Background="White" BorderBrush="#48A6A7" />
+
+            <TextBlock Text="Heure (HH:MM)" FontWeight="Bold" Foreground="#333" />
+            <TextBox x:Name="HeureTextBox" Width="150" Height="35" />
+
+            <TextBlock Text="Description" FontWeight="Bold" Foreground="#333" />
+            <TextBox x:Name="DescriptionTextBox"
+                     Width="500" Height="80"
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap" />
+
+            <Button Content="➕ Ajouter le rendez-vous"
+                    Click="AjouterRdv"
+                    Width="240" Height="45"
+                    Background="#006A71"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    CornerRadius="6"
+                    HorizontalAlignment="Left" />
+          </StackPanel>
+        </Border>
+
+        <!-- Liste des RDV -->
+        <TextBlock Text="📋 Liste des rendez-vous"
+                   FontSize="20" FontWeight="Bold"
+                   Margin="0 10 0 0" Foreground="White" />
+
+        <Border BorderBrush="#CCC" BorderThickness="1" CornerRadius="8" Background="White">
+          <ScrollViewer Height="220">
+            <ListBox x:Name="ListeRdv"
+                     Background="White"
+                     BorderThickness="0"
+                     Margin="5"
+                     Foreground="Black" />
+          </ScrollViewer>
+        </Border>
+
+        <!-- Actions -->
+        <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Center">
+          <Button Content="🗑 Supprimer le rendez-vous sélectionné"
+                  Click="SupprimerRdv"
+                  Width="320" Height="45"
+                  Background="#D32F2F"
+                  Foreground="White"
+                  FontWeight="Bold"
+                  CornerRadius="6" />
+
+          <Button Content="📅 Voir le calendrier"
+                  Click="OuvrirCalendrier"
+                  Width="220" Height="45"
+                  Background="#4CAF50"
+                  Foreground="White"
+                  FontWeight="Bold"
+                  CornerRadius="6" />
+        </StackPanel>
+
+      </StackPanel>
+    </ScrollViewer>
+  </Border>
+</Window>
